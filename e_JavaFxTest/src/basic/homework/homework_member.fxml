@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="vbox" fx:controller="basic.homework.homework_member_controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="145.0" prefWidth="650.0">
+         <children>
+            <AnchorPane prefHeight="143.0" prefWidth="397.0">
+               <children>
+                  <Text layoutX="25.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID :" />
+                  <Text layoutX="5.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :" />
+                  <Text layoutX="21.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tel :" />
+                  <Text layoutX="10.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Addr :" />
+                  <TextField fx:id="txt_id" layoutX="55.0" layoutY="13.0" prefHeight="17.0" prefWidth="345.0" />
+                  <TextField fx:id="txt_name" layoutX="55.0" layoutY="46.0" prefHeight="17.0" prefWidth="345.0" />
+                  <TextField fx:id="txt_tel" layoutX="55.0" layoutY="78.0" prefHeight="17.0" prefWidth="345.0" />
+                  <TextField fx:id="txt_addr" layoutX="55.0" layoutY="111.0" prefHeight="17.0" prefWidth="345.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="38.0" prefWidth="650.0" spacing="25.0">
+         <children>
+            <Button fx:id="btn_add" mnemonicParsing="false" prefHeight="20.0" prefWidth="80.0" text="Add" />
+            <Button fx:id="btn_update" prefHeight="20.0" prefWidth="80.0" text="Update" />
+            <Button fx:id="btn_delete" mnemonicParsing="false" prefHeight="20.0" prefWidth="80.0" text="Delete" />
+            <Button fx:id="btn_ok" mnemonicParsing="false" prefHeight="20.0" prefWidth="80.0" text="OK" />
+            <Button fx:id="btn_cancel" mnemonicParsing="false" prefHeight="20.0" prefWidth="80.0" text="Cancel" />
+         </children>
+      </HBox>
+      <TableView fx:id="tb_member" prefHeight="317.0" prefWidth="650.0">
+        <columns>
+          <TableColumn fx:id="col_id" prefWidth="62.0" text="ID" />
+          <TableColumn fx:id="col_name" prefWidth="109.0" text="Name" />
+          <TableColumn fx:id="col_tel" prefWidth="164.0" text="Tel" />
+          <TableColumn fx:id="col_addr" prefWidth="293.0" text="Addr" />
+        </columns>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </padding>
+      </TableView>
+   </children>
+</VBox>

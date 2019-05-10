@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="538.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="basic.BoardControl">
+   <children>
+      <ComboBox fx:id="select_combo" layoutX="26.0" layoutY="495.0" prefHeight="27.0" prefWidth="104.0" />
+      <TextField fx:id="search_fd" layoutX="141.0" layoutY="495.0" />
+      <Button fx:id="search_btn" layoutX="315.0" layoutY="495.0" mnemonicParsing="false" text="검색" />
+      <Button fx:id="write_btn" layoutX="721.0" layoutY="495.0" mnemonicParsing="false" text="글쓰기" />
+      <Pagination fx:id="pages" layoutX="21.0" layoutY="55.0" prefHeight="425.0" prefWidth="757.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets></Pagination>
+      <TableView fx:id="table_list" layoutX="22.0" layoutY="57.0" minHeight="200.0" prefHeight="360.0" prefWidth="755.0">
+        <columns>
+          <TableColumn fx:id="b_no" prefWidth="54.0" text="번호" />
+          <TableColumn fx:id="b_title" prefWidth="381.0" text="제목" />
+            <TableColumn fx:id="b_writer" prefWidth="112.0" text="작성자" />
+            <TableColumn fx:id="b_date" prefWidth="145.0" text="날짜" />
+            <TableColumn fx:id="b_view" prefWidth="63.0" text="조회수" />
+        </columns>
+      </TableView>
+      <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" text="게시글 목록">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="basic.BoardDetail">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="800.0">
+         <children>
+            <Label alignment="TOP_LEFT" text="상세페이지">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="450.0" prefWidth="800.0">
+         <children>
+            <AnchorPane prefHeight="300.0" prefWidth="760.0">
+               <children>
+                  <Label layoutX="-3.0" layoutY="6.0" text="제목 : " />
+                  <Label layoutX="295.0" layoutY="33.0" text="작성자 : " />
+                  <Label layoutX="104.0" layoutY="33.0" text="날짜 : " />
+                  <Label layoutX="663.0" layoutY="33.0" text="조회수 : " />
+                  <Separator layoutY="50.0" prefHeight="17.0" prefWidth="760.0" />
+                  <Separator layoutX="-1.0" layoutY="442.0" prefHeight="17.0" prefWidth="760.0" />
+                  <Label fx:id="title_lb" layoutX="35.0" layoutY="6.0" text="Label" />
+                  <Label fx:id="date_lb" layoutX="142.0" layoutY="33.0" text="Label" />
+                  <Label fx:id="writer_lb" layoutX="346.0" layoutY="33.0" text="Label" />
+                  <Label fx:id="view_lb" layoutX="714.0" layoutY="33.0" text="Label" />
+                  <Label layoutX="-3.0" layoutY="33.0" text="글번호 : " />
+                  <Label fx:id="no_lb" layoutX="48.0" layoutY="33.0" text="Label" />
+                  <WebView fx:id="contents2" layoutX="2.0" layoutY="64.0" prefHeight="378.0" prefWidth="752.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" prefHeight="35.0" prefWidth="800.0" spacing="10.0">
+         <children>
+            <Button fx:id="cancel_btn" mnemonicParsing="false" text="글목록 보기" />
+            <Button fx:id="del_btn" mnemonicParsing="false" text="삭제" />
+            <Button fx:id="edit_btn" mnemonicParsing="false" text="수정">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="basic.board_controller">
+   <center>
+      <TableView fx:id="tb_board" prefHeight="333.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="col_no" prefWidth="54.0" text="번호" />
+          <TableColumn fx:id="col_writer" prefWidth="101.0" text="작성자" />
+          <TableColumn fx:id="col_title" prefWidth="165.0" text="글제목" />
+          <TableColumn fx:id="col_date" prefWidth="207.0" text="작성일" />
+          <TableColumn fx:id="col_view" prefWidth="72.0" text="조회수" />
+        </columns>
+      </TableView>
+   </center>
+   <top>
+      <AnchorPane prefHeight="59.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="250.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Board" textAlignment="CENTER" wrappingWidth="100.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Button fx:id="btn_serch" layoutX="516.0" layoutY="20.0" mnemonicParsing="false" prefWidth="70.0" text="검색" />
+            <Button fx:id="btn_add" layoutX="435.0" layoutY="20.0" mnemonicParsing="false" prefWidth="70.0" text="글작성" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

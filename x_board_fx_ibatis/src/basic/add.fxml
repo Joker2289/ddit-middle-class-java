@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="basic.add_controller">
+   <children>
+      <AnchorPane prefHeight="105.0" prefWidth="405.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="35.0" prefWidth="400.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="글작성" textAlignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutY="37.0" prefHeight="35.0" prefWidth="405.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="작성자 : " textAlignment="CENTER" wrappingWidth="71.8662109375" />
+                  <TextField fx:id="txt_add_writer" prefHeight="27.0" prefWidth="318.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutY="74.0" prefHeight="35.0" prefWidth="405.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="글 제목 : " textAlignment="CENTER" wrappingWidth="71.8662109375" />
+                  <TextField fx:id="txt_add_title" prefHeight="27.0" prefWidth="318.0" />
+               </children></HBox>
+         </children>
+      </AnchorPane>
+      <TextArea fx:id="txt_add_content" prefHeight="247.0" prefWidth="400.0" />
+      <HBox alignment="CENTER" prefHeight="43.0" prefWidth="400.0" spacing="20.0">
+         <children>
+            <Button fx:id="btn_add_ok" mnemonicParsing="false" prefHeight="15.0" prefWidth="70.0" text="OK" />
+            <Button fx:id="btn_add_cancel" mnemonicParsing="false" prefHeight="15.0" prefWidth="70.0" text="취소" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

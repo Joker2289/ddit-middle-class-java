@@ -1,0 +1,1 @@
+rmiregistry -J-classpath -Jclasses

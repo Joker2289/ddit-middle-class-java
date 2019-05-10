@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에서 작성한 SQL을 호출할 때 같이 사용된다. -->			
+<sqlMap namespace="BoardQuery">
+	<!-- 
+		이 영역에 sql문에 맞는 태그를 사용하여 SQL문을 기술한다.
+		
+		사용할 수 있는 기본적인 태그들
+		<select> ~~~ </select>
+		<insert> ~~~ </insert>
+		<update> ~~~ </update>
+		<delete> ~~~ </delete>
+	 -->
+	 
+	 <!-- 
+	 	위 태그에서 사용되는 속성들
+	 		1) id속성 : 해당 태그를 호출할 때 <sqlMap>태그의 namespace와
+	 							  연결하여 사용하는 이름
+	 		2) parameterClass속성 : sql문에 사용될 데이터가 들어있는 객체를
+	 							  지정한다. 
+	 							  (보통 VO클래스, 자바의 자료형이름 등이 사용된다.)
+	 							  (typeAlia로 지정한 alias명을 사용할 수 있다.)							  
+			3) resultClass속성 : select문을 실행한 결과를 담을 객체를 지정한다.
+									(보통 VO클래스나 자바의 자료형이름을 사용한다.)							 
+	 -->
+	 
+	 
+	 
+	<!-- 
+	board_no
+	board_title
+	board_writer
+	board_date
+	board_content 
+	-->
+
+
+	 <!-- insert 연습 -->
+	 <insert id="insert" parameterClass="memVO">
+	 <!--  <insert id="insertMember" parameterClass="ibatis.vo.MemberVO">  -->
+	 		insert into jdbc_board (board_no, board_title, board_writer, board_date, board_content)
+	 		values ( #board_no#, #board_title#, #board_writer#, sysdate(), #board_content# )
+	 </insert>
+	 
+	 <!-- update 연습 (parameterClass에 alias를 지정할 수 있다.) -->
+	 <update id="update" parameterClass="memVO">
+	 		update jdbc_board set board_title=#board_title#, board_writer=#board_writer#, board_date=sysdate(), board_content=#board_content#
+	 		where board_no=#board_no#
+	 </update>
+	 
+	 
+	 <update id="viewup" parameterClass="memVO">
+	 		update jdbc_board set board_view=#board_view#+1 where board_no=#board_no#
+	 		<!-- <dynamic prepend="where">
+	 		 board_no=1
+	 		 </dynamic> -->
+	 		
+	 </update>
+	 
+	 
+	 <!-- 
+	 		parameterClass에 설정되는 값이 단일값(즉 1개의 데이터)이면
+	 		SQL문에 이 값을 나타내는 변수는 특별히 이름이 정해지지 않았다.
+	 		(즉, 사용자가 임의로 지정할 수 있다.)
+	 -->
+	 <!-- delete 연습 -->
+	 <delete id="delete" parameterClass="String">
+<!-- 	 		delete from mymember where mem_id=#mem_id# -->
+			delete from jdbc_board where board_no=#sss#
+	 </delete>
+	 
+	 <!-- select 연습 -->
+	 <select id="getAll" resultClass="memVO">
+	 		select * from jdbc_board
+	 </select>
+	 
+<!-- 	 <select id="getMember" resultClass="memVO" parameterClass="String">
+	 		select * from mymember where mem_id=#mem_id#
+	 </select> -->
+	 
+	 
+	 <select id="getId" resultClass="int" parameterClass="String">
+	 		select count(*) from jdbc_board where board_no=#board_no#
+	 </select>
+	 
+	 <select id="getSearch" resultClass="memVO" parameterClass="memVO"> 
+	 		select * from jdbc_board
+	 		
+	 		<!--  property : 대상 / prepend : 접두사 -->
+	 		<dynamic prepend="where">
+	 			<isNotEmpty property="board_no" prepend="or">
+	 				board_no = #board_no#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="board_title" prepend="or">
+	 				board_title like "%$board_title$%"
+	 				<!-- board_title like '%' || #board_title# || '%' -->
+	 			</isNotEmpty>
+	 			<isNotEmpty property="board_writer" prepend="or">
+	 				board_writer like "%$board_writer$%"
+	 			</isNotEmpty>
+	 			<isNotEmpty property="board_content" prepend="or">
+	 				board_content like "%$board_content$%"
+	 				<!-- board_content like '%' || #board_content# || '%' -->
+	 			</isNotEmpty>
+	 		</dynamic>
+	 		
+
+
+			<!--  이렇게 사용해도 된다.
+	 		select * from mymember
+	 		where 1=1
+	 			<isNotEmpty property="mem_id">
+	 				and mem_id = #mem_id#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="mem_name">
+	 				and mem_name = #mem_name#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="mem_tel">
+	 				and mem_tel = #mem_tel#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="mem_addr">
+	 				and mem_addr like '%' || #mem_addr# || '%'
+	 			</isNotEmpty>
+			 -->
+
+	 </select>
+
+</sqlMap>			
+
+
+
+
+
